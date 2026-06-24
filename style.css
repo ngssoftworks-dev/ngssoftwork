@@ -284,9 +284,11 @@ body::before {
 }
 
 .sec-h.text-c, .text-c .sec-h {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: none;
   text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .sec-h.text-c::after, .text-c .sec-h::after {
@@ -417,8 +419,8 @@ body::before {
 .tier-desc { color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
   width: 100%;
@@ -445,7 +447,7 @@ body::before {
 }
 .svc-card-simple:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); transform: translateY(-5px); }
 .svc-icon-simple { font-size: 2rem; margin-bottom: 1rem; opacity: 0.8; display: flex; justify-content: center; }
-.svc-logo-img { height: 40px; width: auto; object-fit: contain; border-radius: 4px; }
+.svc-logo-img { height: 65px; width: auto; object-fit: contain; border-radius: 4px; }
 .svc-multi-logo { display: flex; gap: 15px; align-items: center; }
 .svc-card-simple h4 { font-family: var(--font-heading); font-size: 1rem; color: #fff; font-weight: 500; }
 
@@ -476,7 +478,7 @@ body::before {
 .svc-card:hover .svc-glow { opacity: 0.2; }
 .svc-icon { font-size: 2.5rem; margin-bottom: 1.5rem; position: relative; z-index: 2; }
 .svc-icon-box {
-  width: 65px; height: 65px;
+  width: 90px; height: 90px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -3129,8 +3131,266 @@ body.loading {
   }
 }
 
+/* --- MOBILE PERFORMANCE OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+  /* Disable heavy scaling transitions on large background images */
+  .hero-slide {
+    transform: none !important;
+    transition: opacity 0.8s ease !important;
+    will-change: opacity !important;
+  }
+  .hero-slide.active {
+    transform: none !important;
+  }
+  
+  /* Disable expensive backdrop filters */
+  #navbar.scrolled, .mobile-menu {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(8, 8, 8, 1) !important;
+  }
+  
+  /* Simplify reveal animations on mobile to reduce GPU overhead */
+  [data-reveal] {
+    transform: translateY(15px) !important;
+    transition: opacity 0.4s ease, transform 0.4s ease !important;
+    will-change: auto !important;
+  }
+  [data-reveal].visible {
+    transform: translateY(0) !important;
+  }
 
+  /* Completely hide massive blurred glows on mobile */
+  .hero-glow, .svc-glow {
+    display: none !important;
+  }
 
+  /* Fix container padding for mobile so content isn't squished */
+  .container {
+    padding: 0 1.2rem !important;
+  }
+  
+  /* Fix navbar padding for mobile */
+  #navbar {
+    padding: 0 1rem !important;
+  }
 
+  /* Adjust typography to prevent overlapping on small phones */
+  h1, .hero-h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    line-height: 1.2;
+  }
+  
+  .hero-p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
 
+/* --- GLOBAL ALIGNMENT FIXES --- */
+.text-c {
+  text-align: center !important;
+}
 
+/* --- CINEMATIC PRELOADER --- */
+.cinematic-preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.cinematic-preloader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cinematic-dolly-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: cinematicDolly 12s ease-out forwards;
+}
+
+@keyframes cinematicDolly {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.particles-overlay {
+  position: absolute;
+  inset: -50%;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, rgba(212,175,55,0.9), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, rgba(212,175,55,0.7), rgba(0,0,0,0)),
+    radial-gradient(2.5px 2.5px at 50px 160px, rgba(212,175,55,0.5), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, rgba(212,175,55,0.6), rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 130px 80px, rgba(212,175,55,0.8), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 160px 120px, rgba(212,175,55,0.4), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  animation: floatParticles 25s linear infinite;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+@keyframes floatParticles {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-250px); }
+}
+
+.cinematic-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* --- PHASE 1: WELCOME TEXT --- */
+.cinematic-text-container {
+  grid-area: 1 / 1;
+  perspective: 1200px;
+  animation: fadeOutPhase1 1s cubic-bezier(0.4, 0, 0.2, 1) 5.5s forwards;
+}
+
+.welcome-text-metallic {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: transparent;
+  background: linear-gradient(135deg, #a67c00 0%, #bf953f 25%, #fff 40%, #fcf6ba 50%, #b38728 75%, #fbf5b7 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 10px 30px rgba(212, 175, 55, 0.4);
+  animation: welcome3DReveal 3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, goldSweep 3s linear 0.5s forwards;
+}
+
+@keyframes welcome3DReveal {
+  0% { transform: rotateX(110deg) scale(0.9); filter: blur(10px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: rotateX(0deg) scale(1); filter: blur(0px); opacity: 1; }
+}
+
+@keyframes goldSweep {
+  0% { background-position: 300% center; }
+  100% { background-position: -300% center; }
+}
+
+@keyframes fadeOutPhase1 {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.05); pointer-events: none; }
+}
+
+/* --- PHASE 2: LOGO AND TAGLINE --- */
+.cinematic-logo-container {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: logoScaleUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 5.5s forwards;
+}
+
+.cinematic-logo {
+  height: 140px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.9), 0 0 35px rgba(212,175,55,0.3);
+  margin-bottom: 1.8rem;
+  background: #fff;
+  padding: 8px;
+}
+
+.cinematic-tagline {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeInTagline 1.5s ease forwards 6.5s;
+}
+
+@keyframes logoScaleUp {
+  0% { opacity: 0; transform: scale(0.85) translateY(30px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeInTagline {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* --- PHASE 3: NAV MENU --- */
+.cinematic-nav {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+}
+
+.cinematic-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.cinematic-nav li {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+  cursor: pointer;
+  animation: navStaggerReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(7.5s + (var(--anim-order) * 0.2s));
+}
+
+.cinematic-nav li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.cinematic-nav li:hover::after, .cinematic-nav li.cinematic-nav-highlight::after {
+  width: 100%;
+}
+
+.cinematic-nav-highlight {
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+@keyframes navStaggerReveal {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cinematic-logo { height: 100px; }
+  .cinematic-tagline { font-size: 0.85rem; letter-spacing: 2px; text-align: center; }
+  .cinematic-nav ul { gap: 1.2rem; }
+  .cinematic-nav li { font-size: 0.75rem; letter-spacing: 1px; }
+}

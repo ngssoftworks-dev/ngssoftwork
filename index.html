@@ -17,17 +17,36 @@
 
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader">
-    <div class="preloader-content">
-      <div class="preloader-logo-container">
-        <img src="logo/logo.jpeg" alt="NGS Soft Works Logo" class="preloader-logo">
-        <div class="preloader-ring"></div>
+  <!-- CINEMATIC PRELOADER -->
+  <div id="preloader" class="cinematic-preloader">
+    <div class="cinematic-dolly-container">
+      <div class="particles-overlay"></div>
+      <div class="cinematic-content">
+        
+        <!-- Phase 1: Welcome Text -->
+        <div class="cinematic-text-container">
+          <div class="welcome-text-metallic">WELCOME TO NGS SOFTWORKS</div>
+        </div>
+
+        <!-- Phase 2: Logo and Tagline -->
+        <div class="cinematic-logo-container">
+          <img src="logo/logo.jpeg" alt="NGS Softworks" class="cinematic-logo">
+          <div class="cinematic-tagline">Engineering Digital Innovation</div>
+        </div>
+
+        <!-- Phase 3: Nav Menu -->
+        <nav class="cinematic-nav">
+          <ul>
+            <li style="--anim-order: 1">Home</li>
+            <li style="--anim-order: 2">About</li>
+            <li style="--anim-order: 3">Services</li>
+            <li style="--anim-order: 4">Projects</li>
+            <li style="--anim-order: 5">Contact</li>
+            <li style="--anim-order: 6" class="cinematic-nav-highlight">Get Started</li>
+          </ul>
+        </nav>
+
       </div>
-      <div class="preloader-progress-bar">
-        <div class="preloader-progress"></div>
-      </div>
-      <div class="preloader-text">NGS SOFT WORKS</div>
     </div>
   </div>
 
@@ -63,14 +82,14 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-slider">
-      <div class="hero-slide active" style="background-image: url('assets/code.png')"></div>
+      <div class="hero-slide active hero-slide-logo" style="background-image: url('logo/logo.jpeg')"></div>
       <div class="hero-slide" style="background-image: url('assets/c&s.png')"></div>
       <div class="hero-slide" style="background-image: url('assets/design.png')"></div>
       <div class="hero-slide" style="background-image: url('assets/construction image.png')"></div>
       <div class="hero-slide" style="background-image: url('assets/sketch.png')"></div>
+      <div class="hero-slide" style="background-image: url('assets/code.png')"></div>
       <div class="hero-slide" style="background-image: url('assets/edit.png')"></div>
       <div class="hero-slide" style="background-image: url('assets/logo.png')"></div>
-      <div class="hero-slide hero-slide-logo" style="background-image: url('logo/logo.jpeg')"></div>
       <div class="hero-slider-overlay"></div>
     </div>
 
@@ -78,13 +97,13 @@
     <div class="hero-glow hg-2"></div>
     <div class="hero-glow hg-3"></div>
     <div class="hero-content">
-      <div class="hero-badge" data-reveal>
-        <span class="badge-dot"></span> Technology & Engineering Solutions
+      <div class="hero-badge" data-reveal style="font-size: 1.1rem; font-weight: 700; padding: 10px 24px; letter-spacing: 1.5px; color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(0, 0, 0, 0.5); text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+        <span class="badge-dot" style="background-color: #FFD700; width: 10px; height: 10px; box-shadow: 0 0 12px #FFD700;"></span> NGS SOFTWORKS
       </div>
-      <h1 class="hero-h1" data-reveal>SOFTWARE <span class="text-grad grad-blue">SOLUTIONS</span></h1>
+      <h1 class="hero-h1" data-reveal>NGS <span class="text-grad grad-gold">SOFT WORKS</span></h1>
       <p class="hero-p"
-        style="max-width: 1100px; margin: 0 auto 2rem; font-size: 1.1rem; font-weight: 300; color: var(--text-muted);"
-        data-reveal>Modern websites, apps, automation tools, and smart digital services for your needs.</p>
+        style="max-width: 1100px; margin: 0 auto 2rem; font-size: 1.2rem; font-family: var(--font-heading), sans-serif; font-weight: 700; color: #FFD700; letter-spacing: 0.5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);"
+        data-reveal>Simple solutions powered by technology, engineering, and creativity.</p>
     </div>
   </section>
 
@@ -267,11 +286,11 @@
         <div class="services-grid normal-tier" style="margin-top: 1.5rem;">
 
           <!-- 01. Tekla Structures -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-purple"></div>
             <div class="svc-icon-box">
               <img src="logo/TEKLA LOGO.png" alt="Tekla" class="svc-logo-img"
-                style="height: 38px; width: auto; border-radius: 4px;">
+                style="height: 65px; width: auto; border-radius: 4px;">
             </div>
             <h3>Tekla Structures</h3>
             <ul class="svc-features">
@@ -306,10 +325,10 @@
           </div>
 
           <!-- 02. AutoCAD Drafting -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-blue"></div>
             <div class="svc-icon-box">
-              <img src="logo/AUTOCAD LOGO.webp" alt="AutoCAD" class="svc-logo-img" style="height: 38px; width: auto;">
+              <img src="logo/AUTOCAD LOGO.webp" alt="AutoCAD" class="svc-logo-img" style="height: 65px; width: auto;">
             </div>
             <h3>AutoCAD Drafting</h3>
             <ul class="svc-features">
@@ -342,11 +361,11 @@
           </div>
 
           <!-- 03. SketchUp & Rendering -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-gold"></div>
             <div class="svc-icon-box">
               <img src="logo/SKETCH UP LOGO.jpg" alt="SketchUp" class="svc-logo-img"
-                style="height: 38px; width: auto; border-radius: 4px;">
+                style="height: 65px; width: auto; border-radius: 4px;">
             </div>
             <h3>SketchUp & Rendering</h3>
             <ul class="svc-features">
@@ -381,11 +400,11 @@
           </div>
 
           <!-- 04. STAAD.Pro -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-blue"></div>
             <div class="svc-icon-box">
               <img src="logo/STAAD PRO LOGO.jpg" alt="STAAD" class="svc-logo-img"
-                style="height: 38px; width: auto; border-radius: 4px;">
+                style="height: 65px; width: auto; border-radius: 4px;">
             </div>
             <h3>STAAD.Pro</h3>
             <ul class="svc-features">
@@ -420,11 +439,11 @@
           </div>
 
           <!-- 05. ETABS -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-purple"></div>
             <div class="svc-icon-box">
               <img src="logo/etabs.png" alt="ETABS" class="svc-logo-img"
-                style="height: 38px; width: auto; border-radius: 4px;">
+                style="height: 65px; width: auto; border-radius: 4px;">
             </div>
             <h3>ETABS</h3>
             <ul class="svc-features">
@@ -459,10 +478,10 @@
           </div>
 
           <!-- 06. Revit Architecture (BIM) -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-blue"></div>
             <div class="svc-icon-box">
-              <img src="logo/REVIT LOGO.webp" alt="Revit" class="svc-logo-img" style="height: 38px; width: auto;">
+              <img src="logo/REVIT LOGO.webp" alt="Revit" class="svc-logo-img" style="height: 65px; width: auto;">
             </div>
             <h3>Revit Architecture</h3>
             <ul class="svc-features">
@@ -496,11 +515,11 @@
           </div>
 
           <!-- 07. SAP2000 -->
-          <div class="svc-card" data-category="civil">
+          <div class="svc-card" data-reveal data-category="civil">
             <div class="svc-glow glow-blue"></div>
             <div class="svc-icon-box">
               <img src="logo/sap2000.png" alt="SAP2000" class="svc-logo-img"
-                style="height: 38px; width: auto; border-radius: 4px;">
+                style="height: 65px; width: auto; border-radius: 4px;">
             </div>
             <h3>SAP2000</h3>
             <ul class="svc-features">
@@ -534,6 +553,82 @@
             </div>
           </div>
 
+          <!-- 08. 3ds Max -->
+          <div class="svc-card" data-reveal data-category="civil">
+            <div class="svc-glow glow-gold"></div>
+            <div class="svc-icon-box">
+              <img src="logo/3d max.png" alt="3ds Max" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
+            </div>
+            <h3>3ds Max</h3>
+            <ul class="svc-features">
+              <li>
+                <a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20an%20appointment%20for%203ds%20Max%20-%203D%20Modeling."
+                  target="_blank">
+                  <i data-lucide="sparkle" class="feat-icon" style="color: var(--primary) !important;"></i> 3D
+                  modeling
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20an%20appointment%20for%203ds%20Max%20-%20High-Quality%20Rendering."
+                  target="_blank">
+                  <i data-lucide="sparkle" class="feat-icon" style="color: var(--primary) !important;"></i> High-quality
+                  rendering
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20an%20appointment%20for%203ds%20Max%20-%20Animation."
+                  target="_blank">
+                  <i data-lucide="sparkle" class="feat-icon" style="color: var(--primary) !important;"></i> Walkthrough
+                  animation
+                </a>
+              </li>
+            </ul>
+            <div class="svc-btns">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf89Y_eFjkRTXC7z_jwymOP-OFrISCJzb4p-aeFqOC0KcEkLg/viewform"
+                target="_blank" class="btn btn-glass btn-normal">Normal</a>
+              <button type="button" class="btn btn-glass btn-premium booking-modal-trigger"
+                data-service="Premium - 3ds Max">Premium</button>
+            </div>
+          </div>
+
+          <!-- 09. Lumion -->
+          <div class="svc-card" data-reveal data-category="civil">
+            <div class="svc-glow glow-blue"></div>
+            <div class="svc-icon-box">
+              <img src="logo/lumion.png" alt="Lumion" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
+            </div>
+            <h3>Lumion</h3>
+            <ul class="svc-features">
+              <li>
+                <a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20an%20appointment%20for%20Lumion%20-%20Photorealistic%20Renders."
+                  target="_blank">
+                  <i data-lucide="sparkle" class="feat-icon" style="color: var(--primary) !important;"></i> Photorealistic
+                  renders
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20an%20appointment%20for%20Lumion%20-%20Exterior%20%26%20Interior."
+                  target="_blank">
+                  <i data-lucide="sparkle" class="feat-icon" style="color: var(--primary) !important;"></i> Exterior &
+                  interior
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20an%20appointment%20for%20Lumion%20-%20Architectural%20Animation."
+                  target="_blank">
+                  <i data-lucide="sparkle" class="feat-icon" style="color: var(--primary) !important;"></i> Architectural
+                  animation
+                </a>
+              </li>
+            </ul>
+            <div class="svc-btns">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf89Y_eFjkRTXC7z_jwymOP-OFrISCJzb4p-aeFqOC0KcEkLg/viewform"
+                target="_blank" class="btn btn-glass btn-normal">Normal</a>
+              <button type="button" class="btn btn-glass btn-premium booking-modal-trigger"
+                data-service="Premium - Lumion">Premium</button>
+            </div>
+          </div>
+
         </div> <!-- Close Civil & BIM Grid -->
       </div> <!-- Close Civil & BIM Group -->
 
@@ -543,10 +638,10 @@
         <div class="services-grid normal-tier office-grid" style="margin-top: 1.5rem;">
 
           <!-- 06. Microsoft Word -->
-          <div class="svc-card" data-category="office">
+          <div class="svc-card" data-reveal data-category="office">
             <div class="svc-glow glow-blue"></div>
             <div class="svc-icon-box">
-              <img src="logo/word-c536.png" alt="Word" class="svc-logo-img" style="height: 38px; width: auto;">
+              <img src="logo/word-c536.png" alt="Word" class="svc-logo-img" style="height: 65px; width: auto;">
             </div>
             <h3>Microsoft Word</h3>
             <ul class="svc-features">
@@ -581,10 +676,10 @@
           </div>
 
           <!-- 08. Microsoft Excel -->
-          <div class="svc-card" data-category="office">
+          <div class="svc-card" data-reveal data-category="office">
             <div class="svc-glow glow-emerald" style="background: #107c41;"></div>
             <div class="svc-icon-box">
-              <img src="logo/excel-logo-24ae.png" alt="Excel" class="svc-logo-img" style="height: 38px; width: auto;">
+              <img src="logo/excel-logo-24ae.png" alt="Excel" class="svc-logo-img" style="height: 65px; width: auto;">
             </div>
             <h3>Microsoft Excel</h3>
             <ul class="svc-features">
@@ -619,10 +714,10 @@
           </div>
 
           <!-- 09. PowerPoint & Typing -->
-          <div class="svc-card" data-category="office">
+          <div class="svc-card" data-reveal data-category="office">
             <div class="svc-glow glow-rose" style="background: #d24726;"></div>
-            <div class="svc-icon-box" style="color: #d24726;">
-              <i data-lucide="presentation"></i>
+            <div class="svc-icon-box">
+              <img src="logo/power point.png" alt="PowerPoint" class="svc-logo-img" style="height: 65px; width: auto;">
             </div>
             <h3>PowerPoint</h3>
             <ul class="svc-features">
@@ -656,7 +751,7 @@
           </div>
 
           <!-- 07. Resume & Portfolio Design -->
-          <div class="svc-card" data-category="office">
+          <div class="svc-card" data-reveal data-category="office">
             <div class="svc-glow glow-blue"></div>
             <div class="svc-icon-box" style="color: var(--primary);">
               <i data-lucide="file-text"></i>
@@ -699,10 +794,10 @@
           <div class="services-grid normal-tier" style="margin-top: 1.5rem;">
 
             <!-- 01. Creativity -->
-            <div class="svc-card" data-category="creative">
+            <div class="svc-card" data-reveal data-category="creative">
               <div class="svc-glow glow-blue"></div>
-              <div class="svc-icon-box" style="color: var(--primary);">
-                <i data-lucide="sparkles"></i>
+              <div class="svc-icon-box">
+                <img src="logo/creativity.png" alt="Creativity" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
               </div>
               <h3>Creativity</h3>
               <ul class="svc-features">
@@ -737,10 +832,10 @@
             </div>
 
             <!-- 02. Social Media Maintenance -->
-            <div class="svc-card" data-category="creative">
+            <div class="svc-card" data-reveal data-category="creative">
               <div class="svc-glow glow-purple"></div>
-              <div class="svc-icon-box" style="color: var(--primary);">
-                <i data-lucide="share-2"></i>
+              <div class="svc-icon-box">
+                <img src="logo/social media.png" alt="Social Media" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
               </div>
               <h3>Social Media page development</h3>
               <ul class="svc-features">
@@ -774,11 +869,11 @@
             </div>
 
             <!-- 03. Logo Design -->
-            <div class="svc-card" data-category="creative">
+            <div class="svc-card" data-reveal data-category="creative">
               <div class="svc-glow glow-gold"></div>
               <div class="svc-icon-box">
                 <img src="logo/logo.jpeg" alt="Logo Design" class="svc-logo-img"
-                  style="height: 38px; width: auto; border-radius: 4px;">
+                  style="height: 65px; width: auto; border-radius: 4px;">
               </div>
               <h3>Logo Design</h3>
               <ul class="svc-features">
@@ -813,10 +908,10 @@
             </div>
 
             <!-- 04. Poster Design -->
-            <div class="svc-card" data-category="creative">
+            <div class="svc-card" data-reveal data-category="creative">
               <div class="svc-glow glow-blue"></div>
-              <div class="svc-icon-box" style="color: var(--primary);">
-                <i data-lucide="image"></i>
+              <div class="svc-icon-box">
+                <img src="logo/poster.png" alt="Poster Design" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
               </div>
               <h3>Poster Design</h3>
               <ul class="svc-features">
@@ -851,10 +946,10 @@
             </div>
 
             <!-- 05. Reel Editing for CapCut -->
-            <div class="svc-card" data-category="creative">
+            <div class="svc-card" data-reveal data-category="creative">
               <div class="svc-glow glow-rose" style="background: #e91e63;"></div>
               <div class="svc-icon-box">
-                <img src="logo/CAPCUT LOGO.webp" alt="CapCut" class="svc-logo-img" style="height: 38px; width: auto;">
+                <img src="logo/CAPCUT LOGO.webp" alt="CapCut" class="svc-logo-img" style="height: 65px; width: auto;">
               </div>
               <h3>CapCut Video Editing</h3>
               <ul class="svc-features">
@@ -901,10 +996,10 @@
             <div class="services-grid normal-tier" style="margin-top: 1.5rem;">
 
               <!-- 02. App Development -->
-              <div class="svc-card" data-category="software">
+              <div class="svc-card" data-reveal data-category="software">
                 <div class="svc-glow glow-gold"></div>
-                <div class="svc-icon-box" style="color: var(--secondary);">
-                  <i data-lucide="smartphone"></i>
+                <div class="svc-icon-box">
+                  <img src="logo/app development.png" alt="App Development" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
                 </div>
                 <h3>App Development</h3>
                 <ul class="svc-features">
@@ -938,10 +1033,10 @@
               </div>
 
               <!-- 01. Web Development -->
-              <div class="svc-card" data-category="software">
+              <div class="svc-card" data-reveal data-category="software">
                 <div class="svc-glow glow-blue"></div>
-                <div class="svc-icon-box" style="color: var(--secondary);">
-                  <i data-lucide="globe"></i>
+                <div class="svc-icon-box">
+                  <img src="logo/web.png" alt="Web Development" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
                 </div>
                 <h3>Web Development</h3>
                 <ul class="svc-features">
@@ -983,9 +1078,11 @@
               </div>
 
               <!-- 03. AI Automations -->
-              <div class="svc-card" data-category="software">
+              <div class="svc-card" data-reveal data-category="software">
                 <div class="svc-glow glow-rose"></div>
-                <div class="svc-icon-box" style="color: var(--primary);"><i data-lucide="cpu"></i></div>
+                <div class="svc-icon-box">
+                  <img src="logo/automation.png" alt="AI Automation" class="svc-logo-img" style="height: 65px; width: auto; border-radius: 4px;">
+                </div>
                 <h3>AI Automation</h3>
                 <ul class="svc-features">
                   <li>
@@ -1444,8 +1541,4 @@
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
 </body>
-<<<<<<< HEAD </html>
-  =======
-
 </html>
->>>>>>> 70b7d2f (updated version)

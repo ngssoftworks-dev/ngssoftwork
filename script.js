@@ -1,5 +1,24 @@
 
 
+// ── CINEMATIC PRELOADER SEQUENCE ─────────────
+// Disable scrolling while cinematic intro plays
+document.body.style.overflow = 'hidden';
+
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    // Hide the preloader after exactly 11 seconds
+    setTimeout(() => {
+      preloader.classList.add('hide');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }, 11000);
+  }
+}
+
+// Execute immediately since the script is at the bottom of the body
+hidePreloader();
+
+
 // ── NAV SCROLL & HAMBURGER ─────────────────────
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
@@ -82,8 +101,8 @@ const slideInterval = 6000; // Change image every 6 seconds (6 SEC HOLD)
 
 const slideshowData = [
   {
-    h1: 'SOFTWARE <span class="text-grad grad-blue">SOLUTIONS</span>',
-    p: 'Modern websites, apps, automation tools, and smart digital services for your needs.'
+    h1: 'NGS <span class="text-grad grad-gold">SOFT WORKS</span>',
+    p: 'Simple solutions powered by technology, engineering, and creativity.'
   },
   {
     h1: 'CIVIL & <span class="text-grad grad-green">BIM SERVICES</span>',
@@ -102,16 +121,16 @@ const slideshowData = [
     p: 'Detailed 2D technical drawings, blueprint designs, elevations, and CAD drafting layouts.'
   },
   {
+    h1: 'SOFTWARE <span class="text-grad grad-blue">SOLUTIONS</span>',
+    p: 'Modern websites, apps, automation tools, and smart digital services for your needs.'
+  },
+  {
     h1: 'VIDEO & <span class="text-grad grad-purple">MEDIA EDITING</span>',
     p: 'Creative video editing, motion graphics, reels, and professional digital media production.'
   },
   {
     h1: 'LOGO & <span class="text-grad grad-orange">BRANDING</span>',
     p: 'Modern logo design, visual branding, and creative identity solutions for startups and businesses.'
-  },
-  {
-    h1: 'NGS <span class="text-grad grad-gold">SOFT WORKS</span>',
-    p: 'Simple solutions powered by technology, engineering, and creativity.'
   }
 ];
 
@@ -158,10 +177,12 @@ function nextSlide() {
       heroP.textContent = data.p;
       
       // Keep styling consistent for all standard paragraphs
-      heroP.style.fontSize = '1.1rem';
-      heroP.style.fontWeight = '300';
-      heroP.style.color = 'var(--text-muted)';
-      heroP.style.letterSpacing = 'normal';
+      heroP.style.fontSize = '1.2rem';
+      heroP.style.fontFamily = 'var(--font-heading), sans-serif';
+      heroP.style.fontWeight = '700';
+      heroP.style.color = '#FFD700';
+      heroP.style.letterSpacing = '0.5px';
+      heroP.style.textShadow = '1px 1px 3px rgba(0,0,0,0.8)';
       
       heroP.style.opacity = '1';
       heroP.style.transform = 'translateY(0)';
@@ -339,14 +360,27 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
             
             banner.innerHTML = `
+              <style>
+                @keyframes float-logo {
+                  0% { transform: translateY(0px); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+                  50% { transform: translateY(-8px); box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); }
+                  100% { transform: translateY(0px); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+                }
+                @keyframes spin-ring {
+                  from { transform: rotateX(65deg) rotateZ(0deg); }
+                  to { transform: rotateX(65deg) rotateZ(360deg); }
+                }
+              </style>
               <div style="color: var(--primary); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.2rem; letter-spacing: 2px;">✦ THANK YOU ✦</div>
               <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.3rem;">For Visiting NGS Soft Works</div>
               
-              <!-- Three.js 3D NGS Logo -->
-              <div class="ngs-3d-container">
-                <canvas id="ngs-3d-canvas"></canvas>
-                <div class="ngs-3d-label">NGS · 3D · RENDER</div>
+              <!-- NGS Animated Logo -->
+              <div style="position: relative; width: 120px; height: 120px; margin: 1.5rem auto; display: flex; align-items: center; justify-content: center;">
+                <div style="position: absolute; width: 150px; height: 150px; border-radius: 50%; border: 2px dashed var(--primary); animation: spin-ring 6s linear infinite; opacity: 0.5;"></div>
+                <div style="position: absolute; width: 170px; height: 170px; border-radius: 50%; border: 1px solid rgba(212,175,55,0.3); animation: spin-ring 10s linear infinite reverse; opacity: 0.3;"></div>
+                <img src="logo/logo.jpeg" alt="NGS Logo" style="width: 90px; height: 90px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; animation: float-logo 3s ease-in-out infinite; z-index: 2; position: relative;">
               </div>
+              <div class="ngs-3d-label" style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.75rem; color: var(--primary); font-family: var(--font-mono); letter-spacing: 2px;">NGS · SYSTEM · READY</div>
 
               <div style="border-top: 1px dashed rgba(212,175,55,0.3); border-bottom: 1px dashed rgba(212,175,55,0.3); padding: 0.4rem 0; font-family: var(--font-mono); font-size: 0.65rem; color: var(--secondary);">
                 [SYSTEM STATUS: ONLINE &amp; READY]
@@ -355,129 +389,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             termContent.appendChild(banner);
             
-            // Trigger reveal + launch Three.js 3D NGS logo
+            // Trigger reveal
             setTimeout(() => {
               banner.style.opacity = '1';
               banner.style.transform = 'none';
-
-              // ── THREE.JS 3D NGS BOLD TEXT RENDER ──────────
-              const canvas = document.getElementById('ngs-3d-canvas');
-              if (!canvas || typeof THREE === 'undefined') return;
-
-              const W = 200, H = 130;
-              canvas.width = W;
-              canvas.height = H;
-
-              const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-              renderer.setSize(W, H);
-              renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-              renderer.setClearColor(0x000000, 0);
-
-              const scene = new THREE.Scene();
-              const camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 100);
-              camera.position.set(0, 0, 5);
-
-              // Lighting rig
-              scene.add(new THREE.AmbientLight(0xffffff, 0.4));
-              const goldLight = new THREE.PointLight(0xd4af37, 5, 20);
-              goldLight.position.set(3, 3, 3);
-              scene.add(goldLight);
-              const backLight = new THREE.PointLight(0xffa500, 2, 15);
-              backLight.position.set(-3, -2, -2);
-              scene.add(backLight);
-              const rimLight = new THREE.PointLight(0xffffff, 1.5, 12);
-              rimLight.position.set(0, 4, -3);
-              scene.add(rimLight);
-
-              // ── Canvas 2D → Texture for bold "NGS" ──
-              const tc = document.createElement('canvas');
-              tc.width = 512; tc.height = 256;
-              const ctx = tc.getContext('2d');
-
-              // Transparent background
-              ctx.clearRect(0, 0, 512, 256);
-
-              // Gold gradient text
-              const grad = ctx.createLinearGradient(0, 0, 0, 256);
-              grad.addColorStop(0,   '#fff7c0');
-              grad.addColorStop(0.3, '#f9d976');
-              grad.addColorStop(0.6, '#d4af37');
-              grad.addColorStop(1,   '#a07820');
-              ctx.fillStyle = grad;
-              ctx.font = 'bold 160px "Sora", "Space Grotesk", Arial Black, sans-serif';
-              ctx.textAlign = 'center';
-              ctx.textBaseline = 'middle';
-
-              // Glow
-              ctx.shadowColor = 'rgba(212, 175, 55, 0.9)';
-              ctx.shadowBlur = 30;
-              ctx.fillText('NGS', 256, 128);
-              // Second pass for crisp fill on top
-              ctx.shadowBlur = 0;
-              ctx.fillText('NGS', 256, 128);
-
-              const texture = new THREE.CanvasTexture(tc);
-              texture.needsUpdate = true;
-
-              // 3D Plane with the text texture
-              const planeMat = new THREE.MeshStandardMaterial({
-                map: texture,
-                transparent: true,
-                metalness: 0.6,
-                roughness: 0.2,
-                emissive: new THREE.Color(0x7a5800),
-                emissiveIntensity: 0.2,
-                emissiveMap: texture
-              });
-              const planeMesh = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 1.6), planeMat);
-
-              const group = new THREE.Group();
-              group.add(planeMesh);
-              scene.add(group);
-
-              // Orbiting gold ring
-              const ring = new THREE.Mesh(
-                new THREE.TorusGeometry(1.8, 0.038, 8, 64),
-                new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.92, roughness: 0.12, emissive: 0x7a4500, emissiveIntensity: 0.6 })
-              );
-              ring.rotation.x = Math.PI * 0.28;
-              scene.add(ring);
-
-              // Floating gold particles
-              const pGeo = new THREE.BufferGeometry();
-              const pCount = 40;
-              const pPos = new Float32Array(pCount * 3);
-              for (let i = 0; i < pCount; i++) {
-                pPos[i*3]   = (Math.random()-0.5)*5.5;
-                pPos[i*3+1] = (Math.random()-0.5)*3.5;
-                pPos[i*3+2] = (Math.random()-0.5)*3;
-              }
-              pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-              const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0xf9d976, size: 0.05, transparent: true, opacity: 0.8 }));
-              scene.add(particles);
-
-              // Animation loop
-              let t = 0;
-              function animateNGS() {
-                if (!document.getElementById('ngs-3d-canvas')) return;
-                requestAnimationFrame(animateNGS);
-                t += 0.012;
-                // Gentle rocking rotation
-                group.rotation.y = Math.sin(t * 0.35) * 0.45;
-                group.rotation.x = Math.sin(t * 0.22) * 0.1;
-                group.position.y = Math.sin(t * 0.55) * 0.08;
-                // Ring orbits
-                ring.rotation.z += 0.009;
-                ring.rotation.x = Math.PI * 0.28 + Math.sin(t * 0.3) * 0.08;
-                // Particles drift
-                particles.rotation.y += 0.003;
-                // Dynamic gold light
-                goldLight.position.x = Math.sin(t * 0.5) * 4;
-                goldLight.position.y = Math.cos(t * 0.4) * 3;
-                renderer.render(scene, camera);
-              }
-              animateNGS();
-
             }, 100);
             
             // Reset button with thank you state
@@ -486,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
             runBtn.style.opacity = '1';
 
             
-            // Re-enable button after 5 seconds to let them run it again
+            // Re-enable button after 5 minutes to let them run it again
             setTimeout(() => {
               runBtn.disabled = false;
               runBtn.innerHTML = `<i data-lucide="play" style="width: 12px; height: 12px; margin-right: 6px; display: inline-block; vertical-align: middle;"></i> Run System Render`;
@@ -502,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               // Re-instantiate the Lucide play icon
               lucide.createIcons();
-            }, 5000);
+            }, 300000);
             
           }, 800);
         }
