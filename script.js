@@ -1,8 +1,7 @@
 
 
 // ── CINEMATIC PRELOADER SEQUENCE ─────────────
-// Disable scrolling while cinematic intro plays
-document.body.style.overflow = 'hidden';
+
 
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
@@ -10,7 +9,11 @@ function hidePreloader() {
     // Hide the preloader after exactly 11 seconds
     setTimeout(() => {
       preloader.classList.add('hide');
-      document.body.style.overflow = 'auto'; // Restore scrolling
+      
+      // Completely remove from DOM after fade transition to stop heavy animations
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 800);
     }, 11000);
   }
 }

@@ -423,6 +423,7 @@ body::before {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -455,10 +456,10 @@ body::before {
   position: relative; background: var(--glass-bg); border: 1px solid var(--border-light); padding: 2.5rem 1.5rem;
   border-radius: 12px; backdrop-filter: blur(20px); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s; overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.1);
-  display: flex; flex-direction: column; height: 100%;
+  display: flex; flex-direction: column;
+  height: 100% !important;
   align-items: center; text-align: center;
   min-height: 440px;
-  will-change: transform;
   max-width: 300px;
   width: 100%;
   margin: 0 auto;
@@ -510,6 +511,7 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  flex-grow: 1;
 }
 .svc-features li {
   margin: 0;
@@ -554,7 +556,6 @@ body::before {
 .svc-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; position: relative; z-index: 2; }
 .svc-card .btn {
   width: 100% !important;
-  margin-top: auto !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -605,7 +606,6 @@ body::before {
 .port-card { 
   display: flex;
   flex-direction: column;
-  height: 100%;
   border: 1px solid var(--border-light); border-radius: 8px; overflow: hidden; 
   background: var(--glass-bg); transition: 0.4s; backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 191, 255, 0.1);
@@ -614,9 +614,9 @@ body::before {
 .port-img { height: 220px; display: flex; align-items: center; justify-content: center; position: relative; }
 .port-icon { font-size: 3rem; opacity: 0.5; transition: 0.4s; }
 .port-card:hover .port-icon { transform: scale(1.1); opacity: 1; }
-.port-info { padding: 1.5rem; }
+.port-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 .port-cat { font-family: var(--font-mono); font-size: 0.65rem; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
-.port-info h4 { font-family: var(--font-heading); font-size: 1.1rem; color: #fff; }
+.port-info h4 { font-family: var(--font-heading); font-size: 1.1rem; color: #fff; margin-bottom: auto; }
 .employee-card .port-img { height: 250px; }
 
 /* Custom Skill Tags Badge Styling */
@@ -2048,10 +2048,8 @@ body.loading {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: flex-start;
   text-align: left;
-  will-change: transform;
 }
 
 .val-glow {
@@ -2270,6 +2268,7 @@ body.loading {
   gap: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding-top: 1.8rem;
+  flex-grow: 1;
 }
 
 .tier-checklist li {
@@ -2363,12 +2362,16 @@ body.loading {
 @media (min-width: 992px) {
   /* Civil & BIM: 3 columns (3x3 layout for 7 cards) */
   .category-group[data-category="civil"] .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
+    align-items: stretch !important;
   }
   
   /* Office & Documents: 4 columns in one single row */
   .category-group[data-category="office"] .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
+    align-items: stretch !important;
   }
   
   /* Creative & Media category grid - Flex layout to center wrapping cards (3x2 layout for 5 cards) */
@@ -2388,7 +2391,9 @@ body.loading {
   
   /* Software & AI: 3 columns layout */
   .category-group[data-category="software"] .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
+    align-items: stretch !important;
     max-width: 1000px !important;
     margin: 0 auto;
   }
@@ -2446,29 +2451,18 @@ body.loading {
 
   /* Civil & BIM category grid - 3 columns (3x3 layout for 7 cards) */
   .category-group[data-category="civil"] .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-  }
-  .category-group[data-category="civil"] .services-grid .svc-card:nth-child(7) {
-    grid-column: 2;
+    align-items: stretch !important;
   }
 
-  /* Center the 7th card of Civil & BIM category on tablet (2-column layout) */
-  @media (min-width: 650px) and (max-width: 991px) {
-    .category-group[data-category="civil"] .services-grid .svc-card:nth-child(7) {
-      grid-column: span 2;
-    }
-  }
 
-  /* Center the 5th card of Creative & Media category on tablet (2-column layout) */
-  @media (min-width: 650px) and (max-width: 991px) {
-    .category-group[data-category="creative"] .services-grid .svc-card:nth-child(5) {
-      grid-column: span 2;
-    }
-  }
 
   /* Office & Documents category grid - 4 columns */
   .category-group[data-category="office"] .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
+    align-items: stretch !important;
   }
 
   /* Creative & Media category grid - Flex layout to center wrapping cards (3x2 layout for 5 cards) */
@@ -2488,18 +2482,15 @@ body.loading {
 
   /* Software & AI category grid - 3 columns layout */
   .category-group[data-category="software"] .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
+    align-items: stretch !important;
     max-width: 1000px !important;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Center the 3rd card of Software & AI category on tablet (2-column layout) */
-  @media (min-width: 650px) and (max-width: 991px) {
-    .category-group[data-category="software"] .services-grid .svc-card:nth-child(3) {
-      grid-column: span 2;
-    }
-  }
+
 }
 
 /* Adjust font sizes slightly on mid-sized screens to prevent text overlap */
@@ -3202,7 +3193,7 @@ body.loading {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 0.8s ease-out;
 }
 
 .cinematic-preloader.hide {
