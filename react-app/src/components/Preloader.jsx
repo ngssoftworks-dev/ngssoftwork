@@ -26,7 +26,7 @@ const Preloader = () => {
             <div className="welcome-text-metallic">WELCOME TO NGS SOFTWORKS</div>
           </div>
           <div className="cinematic-logo-container">
-            <img src="/logo/logo.jpeg" alt="NGS Softworks" className="cinematic-logo" />
+            <img src="./logo/logo.jpeg" alt="NGS Softworks" className="cinematic-logo" />
             <div className="cinematic-tagline" style={{ 
               fontSize: '1.8rem', 
               fontWeight: 800, 

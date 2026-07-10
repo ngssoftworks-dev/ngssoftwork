@@ -8,7 +8,7 @@ const Trust = () => {
         <h2 className="sec-h text-c" data-reveal>Authorized & <span className="text-grad">Certified Enterprise</span></h2>
         <div className="trust-grid mt-2" data-reveal>
           <div className="trust-card trust-gold">
-            <div className="trust-icon"><img src="/logo/udhayam.png" alt="Udhayam Logo" className="trust-img" /></div>
+            <div className="trust-icon"><img src="./logo/udhayam.png" alt="Udhayam Logo" className="trust-img" /></div>
             <div className="trust-info">
               <h4>Ministry of MSME Certification</h4>
               <p>Registered Government of India Enterprise ensuring regulatory compliance and operational excellence.</p>
@@ -21,7 +21,7 @@ const Trust = () => {
           </div>
 
           <div className="trust-card trust-gold">
-            <div className="trust-icon"><img src="/logo/startup india.png" alt="Startup India Logo" className="trust-img" /></div>
+            <div className="trust-icon"><img src="./logo/startup india.png" alt="Startup India Logo" className="trust-img" /></div>
             <div className="trust-info">
               <h4>DPIIT Startup India Recognition</h4>
               <p>Officially recognized by the Ministry of Commerce for outstanding innovation and economic contribution.</p>

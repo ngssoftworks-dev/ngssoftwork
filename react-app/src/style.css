@@ -26,7 +26,7 @@ body {
   background-size: cover;
   color: var(--text-main);
   font-family: var(--font-body);
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -131,8 +131,27 @@ body::before {
 .nav-links a {
   font-family: var(--font-body); font-size: 0.85rem; color: var(--text-muted);
   text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; transition: 0.3s;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 .nav-links a:hover { color: #fff; }
+.nav-links a.active {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: nav-glow-flow 2s infinite alternate;
+}
+
+@keyframes nav-glow-flow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1), inset 0 0 2px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
 .nav-btn {
   border: 1px solid var(--border-light); padding: 0.6rem 1.2rem; border-radius: 4px;
   background: var(--glass-bg); color: #fff !important;
@@ -147,7 +166,8 @@ body::before {
   flex-direction: column; padding: 2rem; gap: 1.5rem; z-index: 199;
 }
 .mobile-menu.open { display: flex; }
-.mm-link { color: var(--text-muted); text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.mm-link { color: var(--text-muted); text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+.mm-link.active { color: #fff; padding-left: 10px; border-left: 3px solid var(--primary); font-weight: 600; }
 .mm-link.highlight { color: var(--primary); }
 
 /* HERO */
@@ -478,7 +498,7 @@ body::before {
 .svc-card:hover .svc-glow { opacity: 0.2; }
 .svc-icon { font-size: 2.5rem; margin-bottom: 1.5rem; position: relative; z-index: 2; }
 .svc-icon-box {
-  width: 90px; height: 90px;
+  width: 100px; height: 100px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -494,7 +514,7 @@ body::before {
   transform: translateY(-2px);
 }
 .svc-icon-box img {
-  max-width: 60%; max-height: 60%;
+  max-width: 85%; max-height: 85%;
   object-fit: contain;
 }
 .svc-icon-box.svc-multi-logo img {

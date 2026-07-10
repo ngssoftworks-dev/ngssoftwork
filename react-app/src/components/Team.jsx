@@ -12,8 +12,8 @@ const Team = () => {
           {/* Lead 1: Civil Engineering & BIM */}
           <div className="port-card employee-card" data-reveal>
             <div className="port-img" style={{ position: 'relative' }}>
-              <img src="/profile/image copy.png" alt="Civil Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <img src="/logo/logo.jpeg" alt="NGS Logo" style={{ position: 'absolute', top: '10px', right: '10px', width: '40px', height: '40px', borderRadius: '50%', border: '2px solid var(--primary)', boxShadow: '0 0 10px rgba(212,175,55,0.5)' }} />
+              <img src="./profile/image copy.png" alt="Civil Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="./logo/logo.jpeg" alt="NGS Logo" style={{ position: 'absolute', top: '10px', right: '10px', width: '40px', height: '40px', borderRadius: '50%', border: '2px solid var(--primary)', boxShadow: '0 0 10px rgba(212,175,55,0.5)' }} />
             </div>
             <div className="port-info" style={{ padding: '2.2rem 2rem', display: 'flex', flexDirection: 'column', flex: 1, textAlign: 'left', alignItems: 'flex-start' }}>
               <div className="port-cat" style={{ textAlign: 'left', marginBottom: '0.6rem', fontSize: '0.7rem', letterSpacing: '2px' }}>DIRECTOR OF CIVIL & ENTERPRISE OPERATIONS</div>
@@ -39,8 +39,8 @@ const Team = () => {
           {/* Lead 2: Software & Technology */}
           <div className="port-card employee-card" data-reveal>
             <div className="port-img" style={{ position: 'relative' }}>
-              <img src="/profile/image.png" alt="Software Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <img src="/logo/logo.jpeg" alt="NGS Logo" style={{ position: 'absolute', top: '10px', right: '10px', width: '40px', height: '40px', borderRadius: '50%', border: '2px solid var(--primary)', boxShadow: '0 0 10px rgba(212,175,55,0.5)' }} />
+              <img src="./profile/image.png" alt="Software Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="./logo/logo.jpeg" alt="NGS Logo" style={{ position: 'absolute', top: '10px', right: '10px', width: '40px', height: '40px', borderRadius: '50%', border: '2px solid var(--primary)', boxShadow: '0 0 10px rgba(212,175,55,0.5)' }} />
             </div>
             <div className="port-info" style={{ padding: '2.2rem 2rem', display: 'flex', flexDirection: 'column', flex: 1, textAlign: 'left', alignItems: 'flex-start' }}>
               <div className="port-cat" style={{ textAlign: 'left', marginBottom: '0.6rem', fontSize: '0.7rem', letterSpacing: '2px' }}>DIRECTOR OF TECHNOLOGY & CREATIVE STRATEGY</div>

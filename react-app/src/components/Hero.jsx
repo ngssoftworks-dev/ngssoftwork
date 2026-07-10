@@ -5,52 +5,52 @@ const Hero = () => {
 
   const slides = [
     { 
-      url: '/logo/logo.jpeg', 
+      url: './logo/logo.jpeg', 
       className: 'hero-slide-logo',
       h1: <>NGS <span className="text-grad grad-gold">SOFT WORKS</span></>,
       p: 'Simple solutions powered by technology, engineering, and creativity.'
     },
     { 
-      url: '/assets/c%26s.png', 
+      url: './assets/c&s.png', 
       className: '',
       h1: <>CIVIL & <span className="text-grad grad-green">BIM SERVICES</span></>,
       p: 'Professional CAD drafting, BIM modeling, structural layouts, and engineering design solutions.'
     },
     { 
-      url: '/assets/design.png', 
+      url: './assets/design.png', 
       className: '',
       h1: <>3D MODELING & <span className="text-grad grad-green">RENDERING</span></>,
       p: 'High-quality 3D architectural modeling, interior & exterior renders, and photorealistic design visualizations.'
     },
     { 
-      url: '/assets/construction%20image.png', 
+      url: './assets/construction image.png', 
       className: '',
       h1: <>CONSTRUCTION & <span className="text-grad grad-green">PLANNING</span></>,
       p: 'Accurate architectural drafting, structural analysis, and professional construction blueprints.'
     },
     { 
-      url: '/assets/sketch.png', 
+      url: './assets/sketch.png', 
       className: '',
       h1: <>ARCHITECTURAL <span className="text-grad grad-green">DRAFTING</span></>,
       p: 'Detailed 2D technical drawings, blueprint designs, elevations, and CAD drafting layouts.'
     },
     { 
-      url: '/assets/code.png', 
+      url: './assets/code.png', 
       className: '',
       h1: <>SOFTWARE <span className="text-grad grad-blue">SOLUTIONS</span></>,
       p: 'Modern websites, apps, automation tools, and smart digital services for your needs.'
     },
     { 
-      url: '/assets/edit.png', 
-      className: '',
-      h1: <>VIDEO & <span className="text-grad grad-purple">MEDIA EDITING</span></>,
-      p: 'Creative video editing, motion graphics, reels, and professional digital media production.'
-    },
-    { 
-      url: '/assets/logo.png', 
+      url: './assets/logo.png', 
       className: '',
       h1: <>LOGO & <span className="text-grad grad-orange">BRANDING</span></>,
       p: 'Modern logo design, visual branding, and creative identity solutions for startups and businesses.'
+    },
+    { 
+      url: './assets/edit.png', 
+      className: '',
+      h1: <>VIDEO & <span className="text-grad grad-purple">MEDIA EDITING</span></>,
+      p: 'Creative video editing, motion graphics, reels, and professional digital media production.'
     },
   ];
 

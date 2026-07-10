@@ -1,11 +1,28 @@
-const fs = require('fs');
-const filePath = 'src/components/Solutions.jsx';
-let content = fs.readFileSync(filePath, 'utf-8');
+import fs from 'fs';
+import path from 'path';
 
-content = content.replace(/<button type="button" className="btn btn-glass btn-premium booking-modal-trigger" data-service="Premium - (.*?)">Premium<\/button>/g, (match, p1) => {
-    const encodedService = encodeURIComponent(p1);
-    return `<a href="https://wa.me/917904509269?text=Hello%20NGS%20Soft%20Works%2C%20I%20want%20to%20book%20a%20Premium%20appointment%20for%20${encodedService}" target="_blank" rel="noreferrer" className="btn btn-glass btn-premium">Premium</a>`;
+const componentsDir = path.join(process.cwd(), 'src', 'components');
+
+fs.readdirSync(componentsDir).forEach(file => {
+    if (file.endsWith('.jsx')) {
+        const filePath = path.join(componentsDir, file);
+        let content = fs.readFileSync(filePath, 'utf-8');
+        
+        let modified = false;
+        if (content.includes('src="/logo/')) {
+            content = content.replace(/src="\/logo\//g, 'src="./logo/');
+            modified = true;
+        }
+        if (content.includes('src="/profile/')) {
+            content = content.replace(/src="\/profile\//g, 'src="./profile/');
+            modified = true;
+        }
+        
+        if (modified) {
+            fs.writeFileSync(filePath, content, 'utf-8');
+            console.log(`Updated image paths in ${file}`);
+        }
+    }
 });
 
-fs.writeFileSync(filePath, content, 'utf-8');
-console.log('Replaced all premium modal buttons with WhatsApp links.');
+console.log('Finished updating image paths.');

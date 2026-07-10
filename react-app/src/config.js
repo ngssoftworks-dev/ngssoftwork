@@ -4,8 +4,8 @@ export const siteConfig = {
   whatsappNumber: "917904509269",
   email: "ngssoftworks@gmail.com",
   socialLinks: {
-    instagram: "#",
-    linkedin: "#",
+    instagram: "https://www.instagram.com/ngs_softworks?igsh=bW5xbTRhbDV0dnl5",
+    linkedin: "https://in.linkedin.com/in/ngs-soft-works-b3255a40b",
     facebook: "#"
   }
 };

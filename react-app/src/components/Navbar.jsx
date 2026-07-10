@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { siteConfig } from '../config';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,17 +17,18 @@ const Navbar = () => {
     <>
       <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
         <div className="nav-inner">
-          <a className="nav-brand" href="#">
-            <img src="/logo/logo.jpeg" alt="NGS Soft Works Logo" className="brand-img-logo" />
+          <Link className="nav-brand" to="/">
+            <img src="./logo/logo.jpeg" alt="NGS Soft Works Logo" className="brand-img-logo" />
             <div className="brand-text">
               <span className="brand-name">NGS SOFT WORKS</span>
             </div>
-          </a>
+          </Link>
           <ul className="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#work-process">Process</a></li>
+            <li><NavLink to="/" end>Home</NavLink></li>
+            <li><NavLink to="/service">Service</NavLink></li>
+            <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/team">Team</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
             <li><a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer" className="nav-btn">Start Project</a></li>
           </ul>
           <button 
@@ -39,10 +41,11 @@ const Navbar = () => {
         </div>
       </nav>
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobile-menu">
-        <a href="#about" className="mm-link" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#solutions" className="mm-link" onClick={() => setMenuOpen(false)}>Solutions</a>
-        <a href="#team" className="mm-link" onClick={() => setMenuOpen(false)}>Team</a>
-        <a href="#work-process" className="mm-link" onClick={() => setMenuOpen(false)}>Process</a>
+        <NavLink to="/" end className="mm-link" onClick={() => setMenuOpen(false)}>Home</NavLink>
+        <NavLink to="/service" className="mm-link" onClick={() => setMenuOpen(false)}>Service</NavLink>
+        <NavLink to="/about" className="mm-link" onClick={() => setMenuOpen(false)}>About</NavLink>
+        <NavLink to="/team" className="mm-link" onClick={() => setMenuOpen(false)}>Team</NavLink>
+        <NavLink to="/contact" className="mm-link" onClick={() => setMenuOpen(false)}>Contact</NavLink>
         <a href={`https://wa.me/${siteConfig.whatsappNumber}`} target="_blank" rel="noreferrer" className="mm-link highlight" onClick={() => setMenuOpen(false)}>Start Project</a>
       </div>
     </>

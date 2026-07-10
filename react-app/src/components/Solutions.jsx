@@ -5,8 +5,8 @@ const Solutions = () => {
   return (
     <section id="solutions" className="section">
       <div className="container">
-        <h2 className="sec-h text-c" data-reveal>Services & <span className="text-grad">Capabilities</span></h2>
-        <p className="sec-p text-c" style={{ maxWidth: '700px', margin: '0 auto 3rem' }} data-reveal>Explore our comprehensive suite of enterprise services. Engage our specialized teams to initiate your project.</p>
+        <h2 className="sec-h text-c" data-reveal>Our <span className="text-grad">Services</span></h2>
+        <p className="sec-p text-c" style={{ maxWidth: '700px', margin: '0 auto 3rem' }} data-reveal>Explore all the services we offer. Contact our team to start your project today.</p>
 
         {/* Services Tiers Explanation */}
         <div className="tier-explain-wrap" data-reveal style={{ marginBottom: '5rem' }}>
@@ -15,7 +15,7 @@ const Solutions = () => {
               <div className="tier-header">
                 <span className="tier-badge">Normal Tier</span>
                 <h3>Essential Solutions</h3>
-                <p>Cost-effective, high-quality deliverables tailored for startups and emerging enterprises.</p>
+                <p>Great quality services at an affordable price, perfect for small businesses and everyday projects.</p>
               </div>
               <ul className="tier-checklist">
                 <li><Check className="check-icon" /> Quality work</li>
@@ -31,8 +31,8 @@ const Solutions = () => {
               <div className="tier-glow"><MonitorPlay /></div>
               <div className="tier-header">
                 <span className="tier-badge">Premium Tier</span>
-                <h3>Enterprise Solutions</h3>
-                <p>Advanced capabilities, rapid deployment, and dedicated support for large-scale operations.</p>
+                <h3>Premium Solutions</h3>
+                <p>Advanced features, faster delivery, and special support for large businesses and complex projects.</p>
               </div>
               <ul className="tier-checklist">
                 <li><Check className="check-icon" /> Premium design and development</li>
@@ -56,7 +56,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-purple"></div>
               <div className="svc-icon-box">
-                <img src="/logo/TEKLA LOGO.png" alt="Tekla" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/TEKLA LOGO.png" alt="Tekla" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Tekla Structures</h3>
               <ul className="svc-features">
@@ -74,7 +74,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/AUTOCAD LOGO.webp" alt="AutoCAD" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
+                <img src="./logo/AUTOCAD LOGO.webp" alt="AutoCAD" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
               </div>
               <h3>AutoCAD Drafting</h3>
               <ul className="svc-features">
@@ -92,7 +92,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-gold"></div>
               <div className="svc-icon-box">
-                <img src="/logo/SKETCH UP LOGO.jpg" alt="SketchUp" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/SKETCH UP LOGO.jpg" alt="SketchUp" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>SketchUp & Rendering</h3>
               <ul className="svc-features">
@@ -110,7 +110,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/STAAD PRO LOGO.jpg" alt="STAAD" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/STAAD PRO LOGO.jpg" alt="STAAD" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>STAAD.Pro</h3>
               <ul className="svc-features">
@@ -128,7 +128,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-purple"></div>
               <div className="svc-icon-box">
-                <img src="/logo/etabs.png" alt="ETABS" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/etabs.png" alt="ETABS" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>ETABS</h3>
               <ul className="svc-features">
@@ -146,7 +146,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/REVIT LOGO.webp" alt="Revit" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
+                <img src="./logo/REVIT LOGO.webp" alt="Revit" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
               </div>
               <h3>Revit Architecture</h3>
               <ul className="svc-features">
@@ -164,7 +164,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/sap2000.png" alt="SAP2000" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/sap2000.png" alt="SAP2000" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>SAP2000</h3>
               <ul className="svc-features">
@@ -182,7 +182,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-gold"></div>
               <div className="svc-icon-box">
-                <img src="/logo/3d max.png" alt="3ds Max" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/3d max.png" alt="3ds Max" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>3ds Max</h3>
               <ul className="svc-features">
@@ -200,7 +200,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="civil">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/lumion.png" alt="Lumion" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/lumion.png" alt="Lumion" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Lumion</h3>
               <ul className="svc-features">
@@ -226,7 +226,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="office">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/word-c536.png" alt="Word" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
+                <img src="./logo/word-c536.png" alt="Word" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
               </div>
               <h3>Microsoft Word</h3>
               <ul className="svc-features">
@@ -244,7 +244,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="office">
               <div className="svc-glow glow-emerald" style={{ background: '#107c41' }}></div>
               <div className="svc-icon-box">
-                <img src="/logo/excel-logo-24ae.png" alt="Excel" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
+                <img src="./logo/excel-logo-24ae.png" alt="Excel" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
               </div>
               <h3>Microsoft Excel</h3>
               <ul className="svc-features">
@@ -262,7 +262,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="office">
               <div className="svc-glow glow-rose" style={{ background: '#d24726' }}></div>
               <div className="svc-icon-box">
-                <img src="/logo/power point.png" alt="PowerPoint" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
+                <img src="./logo/power point.png" alt="PowerPoint" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
               </div>
               <h3>PowerPoint</h3>
               <ul className="svc-features">
@@ -305,7 +305,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="creative">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/creativity.png" alt="Creativity" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/creativity.png" alt="Creativity" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Creative Direction</h3>
               <ul className="svc-features">
@@ -323,7 +323,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="creative">
               <div className="svc-glow glow-purple"></div>
               <div className="svc-icon-box">
-                <img src="/logo/social media.png" alt="Social Media" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/social media.png" alt="Social Media" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Social Media page development</h3>
               <ul className="svc-features">
@@ -341,7 +341,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="creative">
               <div className="svc-glow glow-gold"></div>
               <div className="svc-icon-box">
-                <img src="/logo/logo.jpeg" alt="Logo Design" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/logo.jpeg" alt="Logo Design" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Corporate Identity Design</h3>
               <ul className="svc-features">
@@ -359,7 +359,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="creative">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/poster.png" alt="Poster Design" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/poster.png" alt="Poster Design" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Marketing Collateral</h3>
               <ul className="svc-features">
@@ -377,7 +377,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="creative">
               <div className="svc-glow glow-rose" style={{ background: '#e91e63' }}></div>
               <div className="svc-icon-box">
-                <img src="/logo/CAPCUT LOGO.webp" alt="CapCut" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
+                <img src="./logo/CAPCUT LOGO.webp" alt="CapCut" className="svc-logo-img" style={{ height: '65px', width: 'auto' }} />
               </div>
               <h3>Digital Video Production</h3>
               <ul className="svc-features">
@@ -403,7 +403,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="software">
               <div className="svc-glow glow-gold"></div>
               <div className="svc-icon-box">
-                <img src="/logo/app development.png" alt="App Development" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/app development.png" alt="App Development" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Mobile Engineering</h3>
               <ul className="svc-features">
@@ -421,7 +421,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="software">
               <div className="svc-glow glow-blue"></div>
               <div className="svc-icon-box">
-                <img src="/logo/web.png" alt="Web Development" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/web.png" alt="Web Development" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Web Engineering</h3>
               <ul className="svc-features">
@@ -440,7 +440,7 @@ const Solutions = () => {
             <div className="svc-card" data-reveal data-category="software">
               <div className="svc-glow glow-rose"></div>
               <div className="svc-icon-box">
-                <img src="/logo/automation.png" alt="AI Automation" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
+                <img src="./logo/automation.png" alt="AI Automation" className="svc-logo-img" style={{ height: '65px', width: 'auto', borderRadius: '4px' }} />
               </div>
               <h3>Intelligent Automation</h3>
               <ul className="svc-features">
