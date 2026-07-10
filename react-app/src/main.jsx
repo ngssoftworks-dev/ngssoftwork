@@ -7,7 +7,7 @@ import './style.css' // Import existing global styles
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter 
-      basename="/ngssoftwork/"
+      basename={import.meta.env.BASE_URL}
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <App />
