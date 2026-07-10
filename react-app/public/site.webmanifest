@@ -1,0 +1,14 @@
+{
+  "name": "NGS - CIVIL | SOFTWARE | SERVICES",
+  "short_name": "NGS Soft Works",
+  "icons": [
+    {
+      "src": "/logo/logo.jpeg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "theme_color": "#080808",
+  "background_color": "#080808",
+  "display": "standalone"
+}
