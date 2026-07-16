@@ -11,13 +11,14 @@ import Process from './components/Process';
 import Values from './components/Values';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Students from './components/Students';
+import ProjectDetails from './components/ProjectDetails';
 
 const Home = () => (
   <>
     <Hero />
     <Trust />
     <Values /> 
-    <Contact />
   </>
 );
 
@@ -66,9 +67,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/service" element={<Solutions />} />
+          <Route path="/service" element={<><Solutions /><Students /></>} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/project-details" element={<ProjectDetails />} />
         </Routes>
       </div>
       <Footer />

@@ -86,7 +86,12 @@ const Hero = () => {
           <div
             key={index}
             className={`hero-slide ${slide.className} ${index === currentSlide ? 'active' : ''}`}
-            style={{ backgroundImage: `url('${slide.url}')` }}
+            style={{ 
+              backgroundImage: `url('${slide.url}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
           ></div>
         ))}
         <div className="hero-slider-overlay"></div>

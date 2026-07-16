@@ -27,9 +27,7 @@ const Trust = () => {
               <p>Officially recognized by the Ministry of Commerce for outstanding innovation and economic contribution.</p>
               <div className="trust-details"
                 style={{ marginTop: '0.8rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-muted)', borderTop: '1px dashed rgba(255, 255, 255, 0.1)', paddingTop: '0.6rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '15px' }}>
-                <span><strong style={{ color: 'var(--primary)' }}>Founder:</strong> Nithish N</span>
                 <span><strong style={{ color: 'var(--primary)' }}>Certificate No:</strong> IN-0526-9455GJ</span>
-                <span><strong style={{ color: 'var(--primary)' }}>Location:</strong> Tamil Nadu, India</span>
               </div>
             </div>
             <div className="trust-badge">REGISTERED</div>

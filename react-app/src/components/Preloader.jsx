@@ -11,7 +11,7 @@ const Preloader = () => {
         setDisplayNone(true);
       }, 800);
       return () => clearTimeout(timer2);
-    }, 11000);
+    }, 2000);
     return () => clearTimeout(timer1);
   }, []);
 
